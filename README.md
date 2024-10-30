@@ -19,9 +19,13 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
 To something like:
 
-```
+```csharp
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 {
     optionsBuilder.UseSqlite("Data Source = C:\MyDrive\Projects\SimpleImdbEfc\SimpleImdbEfc\Imdb.db");
 }
 ```
+
+Here is the entity class diagram:
+
+![diagram](https://github.com/TroelsMortensen/SimpleImdbEfc/blob/master/SimpleImdbEfc/SimpleImdbEfc.png)
