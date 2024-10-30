@@ -19,7 +19,7 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
 To something like:
 
-```
+```csharp
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 {
     optionsBuilder.UseSqlite("Data Source = C:\MyDrive\Projects\SimpleImdbEfc\SimpleImdbEfc\Imdb.db");
