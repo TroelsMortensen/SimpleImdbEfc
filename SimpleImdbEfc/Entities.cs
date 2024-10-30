@@ -4,7 +4,7 @@ public class Person
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public int Birth { get; set; }
+    public int? Birth { get; set; }
     public List<Show> StarsIn { get; set; }
     public List<Show> Writes { get; set; }
 
@@ -18,7 +18,7 @@ public class Show
     public int Id { get; set; }
     public string Title { get; set; }
     public int Year { get; set; }
-    public int Episodes { get; set; }
+    public int? Episodes { get; set; }
     public Review? Review { get; set; }
     public List<Genre> Genres { get; set; }
     public List<Person> Stars { get; set; }
