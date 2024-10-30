@@ -1,6 +1,8 @@
+using Xunit.Abstractions;
+
 namespace SimpleImdbEfc;
 
-public class Queries
+public class Queries(ITestOutputHelper printer)
 {
     private ImdbContext ctx = new();
 
@@ -8,6 +10,7 @@ public class Queries
     [Fact]
     public void Ex1()
     {
+        printer.WriteLine("This is how you print to unit test console");
     }
 
     // Exercise 2: Which actor has id 103785 
