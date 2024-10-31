@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Xunit.Abstractions;
 
 namespace SimpleImdbEfc;
@@ -6,11 +7,23 @@ public class Queries(ITestOutputHelper printer)
 {
     private ImdbContext ctx = new();
 
+    [Fact]
+    public void TestPrinter()
+    {
+        printer.WriteLine("This is how you print to unit test console");
+        Genre genre = new()
+        {
+            ShowId = 1223,
+            Name = "Fantasy"
+        };
+        printer.Print(genre); // This method is defined at the bottom of this file. It can print out classes as json.
+    }
+    
     // Exercise 1: When was "Black Mirror" first aired 
     [Fact]
     public void Ex1()
     {
-        printer.WriteLine("This is how you print to unit test console");
+        
     }
 
     // Exercise 2: Which actor has id 103785 
@@ -66,5 +79,15 @@ public class Queries(ITestOutputHelper printer)
     public void Ex10()
     {
         
+    }
+}
+public static class PrintExts
+{
+    public static void Print<T>(this ITestOutputHelper helper, T obj) where T : class
+    {
+        helper.WriteLine(JsonSerializer.Serialize(obj, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        }));
     }
 }
