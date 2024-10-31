@@ -11,7 +11,7 @@ public class ImdbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source = Imdb.db");
+        optionsBuilder.UseSqlite(@"Data Source = C:\TRMO\RiderProjects\SimpleImdbEfc\SimpleImdbEfc\Imdb.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
