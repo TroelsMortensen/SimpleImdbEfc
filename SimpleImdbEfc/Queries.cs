@@ -16,7 +16,19 @@ public class Queries(ITestOutputHelper printer)
             ShowId = 1223,
             Name = "Fantasy"
         };
-        printer.Print(genre); // This method is defined at the bottom of this file. It can print out classes as json.
+
+        Genre otherGenre = new()
+        {
+            ShowId = 23,
+            Name = "Horror"
+        };
+        List<Genre> list = [genre, otherGenre];
+        
+        printer.PrintJson(genre); 
+        
+        printer.PrintObject(genre);
+        
+        printer.PrintList(list);
     }
     
     // Exercise 1: When was "Black Mirror" first aired 
@@ -79,15 +91,5 @@ public class Queries(ITestOutputHelper printer)
     public void Ex10()
     {
         
-    }
-}
-public static class PrintExts
-{
-    public static void Print<T>(this ITestOutputHelper helper, T obj) where T : class
-    {
-        helper.WriteLine(JsonSerializer.Serialize(obj, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
     }
 }
